@@ -28,16 +28,6 @@
 
 ---
 
-## 🖼️ Capturas de pantalla
-
-### Interfaz principal
-
-### Panel de administración
-
-> Guarda tus imágenes en una carpeta `docs/img` dentro del repositorio para mantenerlo ordenado.
-
----
-
 ## 🛠️ Tecnologías utilizadas
 
 | Tipo | Tecnología |
@@ -50,7 +40,14 @@
 
 ## ⚙️ Instalación y uso
 
-1. **Clona el repositorio**
+1. **Clona el repositorio en VS Code**
    ```bash
-   git clone https://github.com/usuario/nombre-del-proyecto.git
-   cd nombre-del-proyecto
+   git clone https://github.com/RaulPlayo/Tarea1ProgramacionWeb
+
+2. **Una vez ya clonado el repositorio, escribiremos en terminal lo siguiente: cd Tarea1/src**.
+
+3. **Finalmente, escribimos una vez dentro de src: node server.js; y ya tendríamos la página corriendo en localhost:3000**
+3,5. **NOTA** Si al ejecutarlo sale un error, instalaremos node, mongoose, cors y path con este comando: npm insall express mongoose cors path
+
+
+---
