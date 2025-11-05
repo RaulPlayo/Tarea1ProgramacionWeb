@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Portal de Videojuegos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="brand-container">
+                    <h1><i></i>CentroGame</h1>
+                    <img src="https://i.pinimg.com/originals/03/89/5f/03895f4b7f947fca2aac0523eeb81a7d.gif" 
+                         alt="Animación gaming" class="brand-gif">
+                </div>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link" data-section="home">Inicio</a>
+                <a href="#" class="nav-link" data-section="products">Videojuegos</a>
+                <a href="#" class="nav-link" data-section="chat">Chat</a>
+                <div class="auth-buttons" id="authButtons">
+                    <button class="btn btn-outline" id="loginBtn">Iniciar Sesión</button>
+                    <button class="btn btn-primary" id="registerBtn">Registrarse</button>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span id="userGreeting"></span>
+                    <button class="btn btn-outline" id="logoutBtn">Cerrar Sesión</button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Bienvenido a CentroGameツ</h2>
+                    <p>Descubre todos los juegos que tenemos e inicia un chat con tus amigos.</p>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Catálogo de Videojuegos</h3>
+                    <p>Encuentra los últimos lanzamientos y clásicos atemporales</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Chat en tiempo real</h3>
+                    <p>Conecta con tus amigos en nuestro chat incorporado.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Recomendaciones</h3>
+                    <p>Descubre juegos basados en tus preferencias</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="section-header">
+                <h2>Catálogo de Videojuegos</h2>
+                <div class="filters">
+                    <select id="categoryFilter">
+                        <option value="">Todas las categorías</option>
+                        <option value="acción">Acción</option>
+                        <option value="aventura">Aventura</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="estrategia">Estrategia</option>
+                        <option value="rol">Rol</option>
+                        <option value="simulación">Simulación</option>
+                        <option value="terror">Terror</option>
+                        <option value="indie">Indie</option>
+                    </select>
+                    <select id="platformFilter">
+                        <option value="">Todas las plataformas</option>
+                        <option value="PC">PC</option>
+                        <option value="PlayStation">PlayStation</option>
+                        <option value="PlayStation 2">PlayStation 2</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Nintendo Switch">Nintendo Switch</option>
+                        <option value="Mobile">Mobile</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Buscar videojuegos...">
+                    <button class="btn btn-primary" id="searchBtn">Buscar</button>
+                    <button class="btn btn-warning" id="addProductBtn" style="display: none;">
+                 <i class="fas fa-plus"></i> Añadir Juego
+                </button>
+                </div>
+            </div>
+            <div id="productsGrid" class="products-grid"></div>
+            <div id="pagination" class="pagination"></div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat" class="section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2><i class="fas fa-comments"></i> Chat en Tiempo Real</h2>
+                    <p>¡Chatea con tus amigos!</p>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <p>Bienvenido al chat! Inicia sesión para unirte a la conversación.</p>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <div id="typingIndicator"></div>
+                    <div class="input-group">
+                        <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." disabled>
+                        <button id="sendMessageBtn" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+    <div class="form-group">
+        <label for="loginUsername">Usuario:</label>
+        <input type="text" id="loginUsername" required>
+    </div>
+    <div class="form-group">
+        <label for="loginPassword">Contraseña:</label>
+        <input type="password" id="loginPassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-full">Iniciar Sesión</button>
+            </form>     
+            <p class="modal-footer">
+                ¿No tienes cuenta? <a href="#" id="showRegister">Regístrate aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registrarse</h2>
+            <form id="registerForm">
+    <div class="form-group">
+        <label for="registerUsername">Nombre de usuario:</label>
+        <input type="text" id="registerUsername" required minlength="3">
+        <small class="form-help">Mínimo 3 caracteres</small>
+    </div>
+    <div class="form-group">
+        <label for="registerPassword">Contraseña:</label>
+        <input type="password" id="registerPassword" required minlength="6">
+        <small class="form-help">Mínimo 6 caracteres</small>
+    </div>
+    <div class="form-group">
+        <label for="registerConfirmPassword">Confirmar contraseña:</label>
+        <input type="password" id="registerConfirmPassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-full">Registrarse</button>
+</form>
+            <p class="modal-footer">
+                ¿Ya tienes cuenta? <a href="#" id="showLogin">Inicia sesión aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="productModalTitle">Añadir Videojuego</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Nombre:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Descripción:</label>
+                    <textarea id="productDescription" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice">Precio (€):</label>
+                        <input type="number" id="productPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productRating">Rating (0-5):</label>
+                        <input type="number" id="productRating" min="0" max="5" step="0.1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productCategory">Categoría:</label>
+                        <select id="productCategory" required>
+                            <option value="">Seleccionar categoría</option>
+                            <option value="acción">Acción</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="deportes">Deportes</option>
+                            <option value="estrategia">Estrategia</option>
+                            <option value="rol">Rol</option>
+                            <option value="simulación">Simulación</option>
+                            <option value="terror">Terror</option>
+                            <option value="indie">Indie</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPlatform">Plataforma:</label>
+                        <select id="productPlatform" required>
+                            <option value="">Seleccionar plataforma</option>
+                            <option value="PC">PC</option>
+                            <option value="PlayStation">PlayStation</option>
+                            <option value="Xbox">Xbox</option>
+                            <option value="Nintendo Switch">Nintendo Switch</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productImageUrl">URL de la imagen:</label>
+                    <input type="url" id="productImageUrl" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="productFeatured">
+                        <span class="checkmark"></span>
+                        Destacar este juego
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-outline" id="cancelProductBtn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
