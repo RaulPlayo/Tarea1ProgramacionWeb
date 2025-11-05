@@ -1,6 +1,6 @@
 # 🎮 Tarea 1 de Programación Web --- CentroGame
 
-Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuegos en el incluimos:
+Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuegos en el que incluimos:
 
 🔐 Sistema de login y registro - Cualquiera puede registrarse.
 
@@ -14,13 +14,11 @@ Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuego
 
 ---
 
-## 🚀 Características principales
-
-- ✅ Gestión de usuarios con autenticación
-- 🗂️ Creación, edición y eliminación de tareas
-- 💾 Persistencia en base de datos SQLite / PostgreSQL
-- 📱 Diseño responsive
-- ⚙️ API RESTful para integración externa
+## 🚀 ¿Como lo hemos creado?
+- Lo primero que hice fue replicar la estructura que venía en el pdf. Luego lo que hice fue configurar el package.json con las dependencias básicas como express y mongoose para finalmenteluego crear un servidor Express simple en server.js conectado a MongoDB.
+- Para la autenticación, comencé por el modelo de Usuario con email, password y luego hice al administrador (que ya viene creado por defecto dentro del código). Desarrollé las rutas de registro y login que generan tokens JWT, y creé el middleware authenticateJWT.js para proteger las rutas privadas verificando los tokens.
+-Luego implementé el sistema de juegos con su modelo y las rutas CRUD, diferenciando acceso entre usuarios normales (solo ver) y administradores (crear, editar, eliminar). Para el chat, usé Socket.io creando una interfaz simple en chat.html
+- Finalmente en el frontend, desarrollé index.html con login/registro y estilos CSS básicos, mientras client.js manejaba las peticiones a la API.
 
 ---
 
