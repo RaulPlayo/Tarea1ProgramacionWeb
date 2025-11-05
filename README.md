@@ -1,4 +1,4 @@
-# 🎮 Tarea 1 de Programación Web --- CentroGame
+# 🎮 Tarea 1 de Programación Web - CentroGame
 ![Captura de pantalla 1](/docs/Lobby.png)
 
 Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuegos en el que incluimos:
