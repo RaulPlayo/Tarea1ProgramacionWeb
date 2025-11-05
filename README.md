@@ -5,11 +5,15 @@
 
 🛡️ Acceso seguro - Áreas privadas protegidas con tokens JWT.
 
+
 🔐 Sistema de login y registro - Cualquiera puede registrarse. ![Login de la página](docs/login.png)
+
 
 👥 Dos tipos de usuarios - Usuarios normales y administrador.
 
+
 📦 Gestión de juegos - El administrador puede agregar, editar y eliminar juegos.  ![Vista donde se pueden encontrar los juegos](docs/JuegosAdmin.png)
+
 
 💬 Chat en vivo - Los usuarios registrados pueden chatear entre sí  ![Chat](docs/chat.png)
 
