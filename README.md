@@ -25,7 +25,7 @@ Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuego
 ## 🖼️ Capturas de pantalla
 
 ### Interfaz principal
-![Captura de pantalla 1](docs/img/screenshot1.png)
+![Captura de pantalla 1](/blob/main/docs/Lobby.png)
 
 ### Panel de administración
 ![Captura de pantalla 2](docs/img/screenshot2.png)
