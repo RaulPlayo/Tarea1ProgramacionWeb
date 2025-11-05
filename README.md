@@ -1,4 +1,5 @@
 # 🎮 Tarea 1 de Programación Web --- CentroGame
+![Captura de pantalla 1](/docs/Lobby.png)
 
 Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuegos en el que incluimos:
 
@@ -25,7 +26,6 @@ Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuego
 ## 🖼️ Capturas de pantalla
 
 ### Interfaz principal
-![Captura de pantalla 1](/blob/main/docs/Lobby.png)
 
 ### Panel de administración
 ![Captura de pantalla 2](docs/img/screenshot2.png)
