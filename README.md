@@ -3,8 +3,6 @@
 
 ![Bienvenido!](/docs/Lobby.png)
 
-## Bienvenidos a CentroGame, una aplicación web completa de gestión de videojuegos en el que incluimos:
-
 ## 🛡️ Acceso seguro - Áreas privadas protegidas con tokens JWT.
 
 
