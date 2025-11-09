@@ -48,7 +48,7 @@
 
 3. **Finalmente, escribimos una vez dentro de src: node server.js; y ya tendríamos la página corriendo en localhost:3000**
 
-**NOTA** Si al ejecutarlo sale un error, instalaremos node, mongoose, cors y path con este comando: npm insall express mongoose cors path
+**NOTA** Si al ejecutarlo sale un error, instalaremos node, mongoose, cors y path con este comando: npm install express mongoose cors path
 
 
 ---
